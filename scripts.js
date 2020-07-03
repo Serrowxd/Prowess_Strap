@@ -15,5 +15,9 @@ function FormRaid() {
 }
 
 function NewRaid() {
-  console.log(Object.keys(RaidersObj['RaidersObj']));
+  let raids = Object.keys(RaidersObj['RaidersObj']);
+
+  return raids.forEach((raider) => {
+    $('#item-container').append(`<p> ${raider} </p>`);
+  });
 }

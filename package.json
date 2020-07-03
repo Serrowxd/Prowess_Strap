@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Serrowxd/Prowess_Strap#readme",
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1"
   }
