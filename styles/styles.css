@@ -1,0 +1,28 @@
+.raider-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.raider-card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15rem;
+  width: 35rem;
+  background-color: #2f2f2f;
+  color: white;
+  margin: 1rem; }
+
+.raider-title {
+  font-size: 3rem; }
+
+.raider-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+img {
+  height: 5rem;
+  width: 5rem;
+  border: 15px solid rgba(0, 0, 0, 0.3); }
