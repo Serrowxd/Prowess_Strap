@@ -1,6 +1,6 @@
 let array = ['one', 'two', 'three', 'four'];
-
 import Raiders from './users.js';
+
 import RaidersObj from './users.js';
 
 $(document).ready(() => {
@@ -18,7 +18,7 @@ function GenRaid() {
     console.log(value);
 
     $('#raiders').append(`
-      <div class="raider-card-wrapper">
+      <div id="raider-card" class="raider-card-wrapper">
         <div class="raider-block">
           <p class="raider-title"> ${value.user} </p>
         </div>
@@ -28,42 +28,53 @@ function GenRaid() {
   });
 }
 
-let Serrow = new RaiderCard('Serrow', './assets/png/druid.png', 'Officer');
+$('#raiders').on('click', '.raider-card-wrapper', (event) => {
+  $('.raider-card-wrapper').removeClass('lemgth');
 
-function RaiderCard(name, img, rank) {
-  this.name = name;
-  this.img = img;
-  this.rank = rank;
-}
+  let target = $(event.target);
+  if (event.target.id === 'raider-card') {
+    target.addClass('lemgth');
+  }
+});
 
-function NewRoster(raider) {
-  $('#raiders').append(`
-    <div class="raider">
-      <h1> ${raider.name} </h1>
-      <h1> ${raider.rank} </h1>
-      <img src=${raider.img} />
-    </div>
-  `);
-}
+// Afk Code
 
-function FormRaid() {
-  return Raiders['Raiders'].forEach((item) => {
-    $('#item-container').append(`<p> ${item} </p>`);
-  });
-}
+// let Serrow = new RaiderCard('Serrow', './assets/png/druid.png', 'Officer');
 
-function NewRaid() {
-  let raids = Object.keys(RaidersObj['RaidersObj']);
+// function RaiderCard(name, img, rank) {
+//   this.name = name;
+//   this.img = img;
+//   this.rank = rank;
+// }
 
-  return raids.forEach((raider) => {
-    $('#item-container').append(`<p> ${raider} </p>`);
-  });
-}
+// function NewRoster(raider) {
+//   $('#raiders').append(`
+//     <div class="raider">
+//       <h1> ${raider.name} </h1>
+//       <h1> ${raider.rank} </h1>
+//       <img src=${raider.img} />
+//     </div>
+//   `);
+// }
 
-function Roster() {
-  let raids = Object.keys(RaidersObj['RaidersObj']);
+// function FormRaid() {
+//   return Raiders['Raiders'].forEach((item) => {
+//     $('#item-container').append(`<p> ${item} </p>`);
+//   });
+// }
 
-  return raids.forEach((raider) => {
-    $('#raiders').append(`<p class="raider-card"> ${raider} </p>`);
-  });
-}
+// function NewRaid() {
+//   let raids = Object.keys(RaidersObj['RaidersObj']);
+
+//   return raids.forEach((raider) => {
+//     $('#item-container').append(`<p> ${raider} </p>`);
+//   });
+// }
+
+// function Roster() {
+//   let raids = Object.keys(RaidersObj['RaidersObj']);
+
+//   return raids.forEach((raider) => {
+//     $('#raiders').append(`<p class="raider-card"> ${raider} </p>`);
+//   });
+// }
