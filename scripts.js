@@ -28,15 +28,14 @@ function GenRaid() {
   });
 }
 
-// Unused Click Event
-// $('#raiders').on('click', '.raider-card-wrapper', (event) => {
-//   $('.raider-card-wrapper').removeClass('lemgth');
+$('#raiders').on('click', '.raider-card-wrapper', (event) => {
+  $('.raider-card-wrapper').removeClass('lemgth');
 
-//   let target = $(event.target);
-//   if (event.target.id === 'raider-card') {
-//     target.addClass('lemgth');
-//   }
-// });
+  let target = $(event.target);
+  if (event.target.id === 'raider-card') {
+    target.addClass('lemgth');
+  }
+});
 
 // Afk Code
 
