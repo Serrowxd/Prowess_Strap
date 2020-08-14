@@ -4,7 +4,9 @@ import Raiders from './users.js';
 import RaidersObj from './users.js';
 
 $(document).ready(() => {
-  GenRaid();
+  // GenRaid();
+
+  GenPage();
 });
 
 function GenRaid() {
@@ -36,6 +38,27 @@ $('#raiders').on('click', '.raider-card-wrapper', (event) => {
     target.addClass('lemgth');
   }
 });
+
+// Can I import html directly via javascript for the routing?
+// I can! :D
+// This has to work when routes change, so it'll load different HTML on click events or route ends?
+
+function GenPage() {
+  // Change route but only reload new information based on that route
+  // Easier in React :^))
+
+  $('.nav-home').on('click', () => {
+    $('#root').load('./routes/landing.html', () => {
+      console.log('Loaded!');
+    });
+  });
+
+  $('.nav-roster').on('click', () => {
+    $('#root').load('./routes/roster.html', () => {
+      console.log('Loaded!');
+    });
+  });
+}
 
 // Afk Code
 

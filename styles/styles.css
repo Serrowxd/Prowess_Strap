@@ -3,6 +3,12 @@ body {
   font-family: 'Maven Pro', sans-serif;
   height: 100%; }
 
+#root {
+  height: 100%; }
+
+.content-wrapper {
+  height: 100%; }
+
 .raider-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -77,7 +83,13 @@ body {
 .nav-header p,
 .nav-items p {
   font-size: 1.25rem;
-  padding: 0 2rem; }
+  margin: 0 2rem;
+  transition: 0.15s; }
+
+.nav-header p:hover,
+.nav-items p:hover {
+  cursor: pointer;
+  color: blue; }
 
 .nav-header h1,
 .nav-items h1 {
@@ -103,8 +115,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  height: 75%;
-  width: 65%;
+  margin: auto;
+  height: 100%; }
+
+.jumbo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
   font-size: 3rem;
-  background-color: rgba(255, 255, 255, 0.5); }
+  height: 75%;
+  width: 55%; }

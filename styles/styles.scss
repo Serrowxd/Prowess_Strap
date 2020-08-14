@@ -4,6 +4,14 @@ body {
   height: 100%;
 }
 
+#root {
+  height: 100%;
+}
+
+.content-wrapper {
+  height: 100%;
+}
+
 .raider-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -93,7 +101,13 @@ body {
 
   p {
     font-size: 1.25rem;
-    padding: 0 2rem;
+    margin: 0 2rem;
+    transition: 0.15s;
+
+    &:hover {
+      cursor: pointer;
+      color: blue;
+    }
   }
 
   h1 {
@@ -129,11 +143,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  height: 75%;
-  width: 65%;
+  margin: auto;
+  height: 100%;
+}
 
-  font-size: 3rem;
-
+.jumbo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(white, 0.5);
+  font-size: 3rem;
+  height: 75%;
+  width: 55%;
 }
