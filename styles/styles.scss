@@ -47,8 +47,93 @@ body {
 // Page Wrapper
 
 .page-wrapper {
-  display: flex;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #2f2f2f;
   box-sizing: border-box;
+  background: transparent url(../assets/png/bkg.png) 0% 0% no-repeat padding-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-filter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, #5c148c, #f2c12e);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.navigation,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+// Navigation
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: #2f2f2f;
+  color: white;
+
+  height: 3.75rem;
+}
+
+.nav-header,
+.nav-items {
+  display: flex;
+
+  p {
+    font-size: 1.25rem;
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+// Footer
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-color: #2f2f2f;
+
+  font-size: 0.75rem;
+
+  height: 2.5rem;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  p {
+    padding: 0.5rem;
+  }
+}
+
+// Jumbo
+
+.jumbo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 75%;
+  width: 65%;
+
+  font-size: 3rem;
+
+  background-color: rgba(white, 0.5);
 }
