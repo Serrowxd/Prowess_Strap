@@ -6,6 +6,8 @@ import RaidersObj from './users.js';
 $(document).ready(() => {
   // GenRaid();
 
+  console.log('reloaded!');
+
   GenPage();
 });
 
