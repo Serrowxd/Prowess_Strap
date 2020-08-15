@@ -81,13 +81,19 @@ body {
   display: flex; }
 
 .nav-header p,
-.nav-items p {
+.nav-header a,
+.nav-items p,
+.nav-items a {
   font-size: 1.25rem;
   margin: 0 2rem;
-  transition: 0.15s; }
+  transition: 0.15s;
+  color: white;
+  text-decoration: none; }
 
 .nav-header p:hover,
-.nav-items p:hover {
+.nav-header a:hover,
+.nav-items p:hover,
+.nav-items a:hover {
   cursor: pointer;
   color: blue; }
 

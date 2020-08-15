@@ -4,10 +4,6 @@ import Raiders from './users.js';
 import RaidersObj from './users.js';
 
 $(document).ready(() => {
-  // GenRaid();
-
-  console.log('reloaded!');
-
   GenPage();
 });
 
@@ -46,19 +42,12 @@ $('#raiders').on('click', '.raider-card-wrapper', (event) => {
 // This has to work when routes change, so it'll load different HTML on click events or route ends?
 
 function GenPage() {
-  // Change route but only reload new information based on that route
-  // Easier in React :^))
-
-  $('.nav-home').on('click', () => {
-    $('#root').load('./routes/landing.html', () => {
-      console.log('Loaded!');
-    });
+  $('#nav').load('./components/nav.html', () => {
+    console.log('Navigation Loaded');
   });
 
-  $('.nav-roster').on('click', () => {
-    $('#root').load('./routes/roster.html', () => {
-      console.log('Loaded!');
-    });
+  $('#foot').load('./components/footer.html', () => {
+    console.log('Footer Loaded');
   });
 }
 

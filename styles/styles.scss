@@ -99,10 +99,13 @@ body {
 .nav-items {
   display: flex;
 
-  p {
+  p,
+  a {
     font-size: 1.25rem;
     margin: 0 2rem;
     transition: 0.15s;
+    color: white;
+    text-decoration: none;
 
     &:hover {
       cursor: pointer;
