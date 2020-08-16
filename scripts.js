@@ -27,16 +27,17 @@ function GenRaid() {
           <p> icon </p>
           <p> icon </p>
         </div>
-        <p class="raider-title"> ${raiders[0][1].user} </p>
+        <p class="raider-title main-title"> ${raiders[0][1].user} </p>
         <div class="raider-social">
           <p> icon </p>
           <p> icon </p>
           <p> icon </p>
         </div>
       </div>
-      <img src=${raiders[0][1].classimg} class="raid-img" alt="uwu" />
     </div>
   `);
+
+  // <img src=${raiders[0][1].classimg} class="raid-img" alt="uwu" />
 
   // get next 3 items from array, starting from position 1
   for (let i = 1; i < 4; i++) {
@@ -55,28 +56,42 @@ function GenRaid() {
           <p> icon </p>
         </div>
       </div>
-      <img src=${raiders[i][1].classimg} class="raid-img" alt="uwu" />
+      
     </div>
   `);
   }
 
-  //   raiders.forEach(([key, value]) => {
-  //     console.log(key);
-  //     console.log(value);
+  // <img src=${raiders[i][1].classimg} class="raid-img" alt="uwu" />
 
-  //     // first 4 - block 1
+  // Splice initial officer roster before forEach function
+  raiders.splice(0, 4);
 
-  //     // remainder block 2
+  raiders.forEach(([key, value]) => {
+    console.log(key);
+    console.log(value);
 
-  //     $('#raiders').append(`
-  //       <div class="raider-card-wrapper">
-  //         <div class="raider-block">
-  //           <p class="raider-title"> ${value.user} </p>
-  //         </div>
-  //         <img src=${value.classimg} class="raid-img" alt="uwu" />
-  //       </div>
-  //     `);
-  //   });
+    $('#raiders').append(`
+        <div class="raider-card-wrapper">
+          <div class="raider-block">
+            <div class="raider-links">
+              <p> icon </p>
+              <p> icon </p>
+              <p> icon </p>
+            </div>
+            <p class="raider-title"> ${value.user} </p>
+            <div class="raider-social">
+              <p> icon </p>
+              <p> icon </p>
+              <p> icon </p>
+            </div>
+          </div>
+      </div>
+      `);
+  });
+}
+
+{
+  /* <img src=${value.classimg} class="raid-img" alt="uwu" /> */
 }
 
 $('#raiders').on('click', '.raider-card-wrapper', (event) => {
