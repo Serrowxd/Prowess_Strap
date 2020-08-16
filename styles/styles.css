@@ -9,49 +9,87 @@ body {
 .content-wrapper {
   height: 100%; }
 
-.raider-wrapper {
+.roster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  width: 100%;
+  height: 100%; }
+
+.main-pannel,
+.sub-pannel {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; }
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; }
+
+.main-wrapper {
+  width: 60rem;
+  height: 25rem;
+  margin: 0 auto; }
+
+.sub-wrapper {
+  width: 35rem;
+  height: 20rem;
+  margin: 0 auto; }
+
+.sub-wrapper .raider-title {
+  font-size: 2rem; }
 
 .raider-card-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 15rem;
-  width: 35rem;
   background-color: #2f2f2f;
   color: white;
-  margin: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  flex: 0 1 auto;
+  overflow: hidden;
   transition: 0.15s; }
 
 .raider-card-wrapper img {
-  height: 5rem;
-  width: 5rem;
-  border: 15px solid rgba(0, 0, 0, 0.3); }
+  height: auto;
+  width: 100%;
+  opacity: 0.75; }
 
 .raider-title {
-  font-size: 3rem; }
+  font-size: 5rem;
+  margin-bottom: 2rem; }
+
+.raider-links,
+.raider-social {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around; }
 
 .raider-block {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  justify-content: space-around;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3; }
+
+.raider-block p {
+  padding-bottom: 1rem; }
 
 .lemgth {
   height: 25rem; }
 
 .page-wrapper {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: space-between;
   background-color: #2f2f2f;
   box-sizing: border-box;
   background: transparent url(../assets/png/bkg.png) 0% 0% no-repeat padding-box;
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
 
 .page-filter {
   position: absolute;
@@ -122,7 +160,8 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
-  height: 100%; }
+  height: 100%;
+  width: 100%; }
 
 .jumbo-text {
   display: flex;

@@ -1,10 +1,11 @@
 let array = ['one', 'two', 'three', 'four'];
 import Raiders from './users.js';
 
-import RaidersObj from './users.js';
+import RaidersObj from '../users.js';
 
 $(document).ready(() => {
   GenPage();
+  GenRaid();
 });
 
 function GenRaid() {
@@ -13,19 +14,69 @@ function GenRaid() {
 
   const raiders = Object.entries(RaidersObj['RaidersObj']);
 
-  raiders.forEach(([key, value]) => {
-    console.log(key);
-    console.log(value);
+  // foreach raider in the second portion, first portion we want the first item
+  // then the remaining 3 as a second call
+  // initial card needs to be styled differently from the rest?
 
-    $('#raiders').append(`
-      <div id="raider-card" class="raider-card-wrapper">
-        <div class="raider-block">
-          <p class="raider-title"> ${value.user} </p>
+  // gm pannel
+  $('#gm').append(`
+    <div class="raider-card-wrapper main-wrapper">
+      <div class="raider-block">
+        <div class="raider-links">
+          <p> icon </p>
+          <p> icon </p>
+          <p> icon </p>
         </div>
-        <img src=${value.classimg} class="raid-img" alt="uwu" />
+        <p class="raider-title"> ${raiders[0][1].user} </p>
+        <div class="raider-social">
+          <p> icon </p>
+          <p> icon </p>
+          <p> icon </p>
+        </div>
       </div>
-    `);
-  });
+      <img src=${raiders[0][1].classimg} class="raid-img" alt="uwu" />
+    </div>
+  `);
+
+  // get next 3 items from array, starting from position 1
+  for (let i = 1; i < 4; i++) {
+    $('#council').append(`
+    <div class="raider-card-wrapper sub-wrapper">
+      <div class="raider-block">
+        <div class="raider-links">
+          <p> icon </p>
+          <p> icon </p>
+          <p> icon </p>
+        </div>
+        <p class="raider-title"> ${raiders[i][1].user} </p>
+        <div class="raider-social">
+          <p> icon </p>
+          <p> icon </p>
+          <p> icon </p>
+        </div>
+      </div>
+      <img src=${raiders[i][1].classimg} class="raid-img" alt="uwu" />
+    </div>
+  `);
+  }
+
+  //   raiders.forEach(([key, value]) => {
+  //     console.log(key);
+  //     console.log(value);
+
+  //     // first 4 - block 1
+
+  //     // remainder block 2
+
+  //     $('#raiders').append(`
+  //       <div class="raider-card-wrapper">
+  //         <div class="raider-block">
+  //           <p class="raider-title"> ${value.user} </p>
+  //         </div>
+  //         <img src=${value.classimg} class="raid-img" alt="uwu" />
+  //       </div>
+  //     `);
+  //   });
 }
 
 $('#raiders').on('click', '.raider-card-wrapper', (event) => {
@@ -42,11 +93,11 @@ $('#raiders').on('click', '.raider-card-wrapper', (event) => {
 // This has to work when routes change, so it'll load different HTML on click events or route ends?
 
 function GenPage() {
-  $('#nav').load('./components/nav.html', () => {
+  $('#nav').load('../components/nav.html', () => {
     console.log('Navigation Loaded');
   });
 
-  $('#foot').load('./components/footer.html', () => {
+  $('#foot').load('../components/footer.html', () => {
     console.log('Footer Loaded');
   });
 }
